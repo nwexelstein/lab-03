@@ -34,10 +34,15 @@ number of variables is `r ncol(nobel)`
 ```{r nobel-living}
 nobel_living <- nobel %>%
   filter(!is.na(country) & gender != "org" & is.na(died_date))
-```
 
-number of observations is `r nrow(nobel_living)` 
-number of variables is `r ncol(nobel_living)`
+nobel_living <- nobel_living %>%
+  mutate(
+    country_us = if_else(country == "USA", "USA", "Other")
+  )
+
+nobel_living_science <- nobel_living %>%
+  filter(category %in% c("Physics", "Medicine", "Chemistry", "Economics"))
+```
 #### Narrative
 
 *Remove this text and add your answer here.*

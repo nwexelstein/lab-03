@@ -380,9 +380,18 @@ display: none;
 <div id="code" class="section level4">
 <h4>Code</h4>
 <pre class="r"><code>nobel_living &lt;- nobel %&gt;%
-  filter(!is.na(country) &amp; gender != &quot;org&quot; &amp; is.na(died_date))</code></pre>
-<p>number of observations is 228 number of variables is 26 ####
-Narrative</p>
+  filter(!is.na(country) &amp; gender != &quot;org&quot; &amp; is.na(died_date))
+
+nobel_living &lt;- nobel_living %&gt;%
+  mutate(
+    country_us = if_else(country == &quot;USA&quot;, &quot;USA&quot;, &quot;Other&quot;)
+  )
+
+nobel_living_science &lt;- nobel_living %&gt;%
+  filter(category %in% c(&quot;Physics&quot;, &quot;Medicine&quot;, &quot;Chemistry&quot;, &quot;Economics&quot;))</code></pre>
+</div>
+<div id="narrative-1" class="section level4">
+<h4>Narrative</h4>
 <p><em>Remove this text and add your answer here.</em></p>
 </div>
 </div>
@@ -392,7 +401,7 @@ Narrative</p>
 <h4>Code</h4>
 <pre class="r"><code># remove this comment and add your code here</code></pre>
 </div>
-<div id="narrative-1" class="section level4">
+<div id="narrative-2" class="section level4">
 <h4>Narrative</h4>
 <p><em>Remove this text and add your answer here.</em></p>
 </div>
@@ -406,7 +415,7 @@ Narrative</p>
 </div>
 <div id="exercise-5" class="section level3">
 <h3>Exercise 5</h3>
-<div id="narrative-2" class="section level4">
+<div id="narrative-3" class="section level4">
 <h4>Narrative</h4>
 <p><em>Remove this text and add your answer here.</em></p>
 </div>
@@ -421,7 +430,7 @@ Narrative</p>
 <h4>Code</h4>
 <pre class="r"><code># remove this comment and add your code here</code></pre>
 </div>
-<div id="narrative-3" class="section level4">
+<div id="narrative-4" class="section level4">
 <h4>Narrative</h4>
 <p><em>Remove this text and add your answer here.</em></p>
 </div>
