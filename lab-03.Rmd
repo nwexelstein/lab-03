@@ -53,7 +53,11 @@ nobel_living_science <- nobel_living %>%
 #### Code
 
 ```{r facet-bar-plot}
-# remove this comment and add your code here
+nobel_living_science %>% 
+ggplot(aes(x = country_us) ) +
+  geom_bar() + 
+  facet_grid(category ~ .) +
+  coord_flip()
 ```
 
 #### Narrative
