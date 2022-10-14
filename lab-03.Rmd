@@ -32,9 +32,12 @@ number of variables is `r ncol(nobel)`
 #### Code
 
 ```{r nobel-living}
-# remove this comment and add your code here
+nobel_living <- nobel %>%
+  filter(!is.na(country) & gender != "org" & is.na(died_date))
 ```
 
+number of observations is `r nrow(nobel_living)` 
+number of variables is `r ncol(nobel_living)`
 #### Narrative
 
 *Remove this text and add your answer here.*
