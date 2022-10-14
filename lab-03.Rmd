@@ -24,8 +24,8 @@ nobel <- read_csv("data/nobel.csv")
 
 #### Narrative
 
-*Remove this text and add your answer here.*
-
+number of observations is `r nrow(nobel)` 
+number of variables is `r ncol(nobel)`
 
 ### Exercise 2
 
